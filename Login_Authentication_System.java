@@ -32,7 +32,7 @@ public class Login_Authentication_System {
 		try {
 			System.out.println("Enter the username:");
 			username = sc.nextLine();
-			if(username.equals(null))
+			if(username.isEmpty())
 			{
 				throw new InvalidUsernameException("Inalid username!\nTry again!");
 			}
