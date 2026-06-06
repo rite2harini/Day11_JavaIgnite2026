@@ -56,6 +56,7 @@ public class Hospital_Emergency_System {
 		{
 			System.out.println(e.getMessage());
 		}
+		sc.close();
 	}
 
 }
