@@ -1,12 +1,38 @@
-/*
-Create a program that:
+public class StudentScore {
+	public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-Takes student answers score
-Calculates percentage
-Rules:
-Marks cannot exceed 100 → InvalidMarksException
-Negative marks not allowed → NegativeMarksException
-If student ID is null → NullPointerException handling
-Twist:
-Use nested try-catch blocks
-*/
+        try {
+            try {
+                System.out.print("Enter student ID: ");
+                String studentId = sc.nextLine();
+
+                if (studentId.isEmpty()) {
+                    throw new NullPointerException("Student ID is null");
+                }
+
+                System.out.print("Enter marks: ");
+                int marks = sc.nextInt();
+
+                if (marks > 100) {
+                    throw new InvalidMarksException("Marks cannot exceed 100");
+                }
+
+                if (marks < 0) {
+                    throw new NegativeMarksException("Negative marks not allowed");
+                }
+
+                double percentage = marks;
+                System.out.println("Percentage: " + percentage + "%");
+
+            } catch (NullPointerException e) {
+                System.out.println("Exception: " + e.getMessage());
+            }
+
+        } catch (InvalidMarksException | NegativeMarksException e) {
+            System.out.println("Exception: " + e.getMessage());
+        }
+    }
+
+}
+
