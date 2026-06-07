@@ -1,4 +1,4 @@
-package java_internship_day11;
+package JavaIgniteDay11;
 import java.util.Scanner;
 class InvalidUsernameException extends Exception {
     InvalidUsernameException(){
